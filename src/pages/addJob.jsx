@@ -21,7 +21,7 @@ const AddJob = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const response = await axios.post('https://job-tracker-backend-txxz.onrender.com', formData);
+      const response = await axios.post(`${import.meta.env.VITE_API_URL}/api/jobs`, formData);
       console.log('Job added:', response.data);
       alert('Job added successfully');
     } catch (err) {
